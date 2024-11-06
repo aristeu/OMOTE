@@ -25,7 +25,8 @@ enum IRprotocols {
   IR_PROTOCOL_SONY = 3,
   IR_PROTOCOL_RC5 = 4,
   IR_PROTOCOL_DENON = 5,
-  IR_PROTOCOL_SAMSUNG36 = 6
+  IR_PROTOCOL_SAMSUNG36 = 6,
+  IR_PROTOCOL_EPSON = 7
 };
 void sendIRcode_HAL(int protocol, std::list<std::string> commandPayloads, std::string additionalPayload) {
 
@@ -110,5 +111,13 @@ void sendIRcode_HAL(int protocol, std::list<std::string> commandPayloads, std::s
       IrSender.sendSamsung36(data);
       break;
     }
+
+    case IR_PROTOCOL_EPSON: {
+      data = std::stoull(dataStr, &sz, 0);
+      Serial.printf("execute: will send IR EPSON, data %s (%" PRIu64 ")\r\n", dataStr.c_str(), data);
+      IrSender.sendEpson(data);
+      break;
+    }
+
   }
 }
