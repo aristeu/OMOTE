@@ -4,7 +4,9 @@
 #include "device_onkyo_rc911r.h"
 
 // Only activate the commands that are used. Every command takes 100 bytes, wether used or not.
-uint16_t ONKYO_RC911R_POWER_TOGGLE;
+//uint16_t ONKYO_RC911R_POWER_TOGGLE;
+uint16_t ONKYO_RC911R_POWER_OFF;
+uint16_t ONKYO_RC911R_POWER_ON;
 uint16_t ONKYO_RC911R_BD_DVD;
 uint16_t ONKYO_RC911R_CBL_SAT;
 uint16_t ONKYO_RC911R_GAME;
@@ -40,7 +42,9 @@ uint16_t ONKYO_RC911R_MUTE;
 // uint16_t ONKYO_RC911R_MODE;
 
 void register_device_onkyo_rc911r() {
-	register_command(&ONKYO_RC911R_POWER_TOGGLE, makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x4B36D32C"}));
+//	register_command(&ONKYO_RC911R_POWER_TOGGLE, makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x4B36D32C"}));
+	register_command(&ONKYO_RC911R_ON, makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x4BB620DF"}));
+	register_command(&ONKYO_RC911R_OFF, makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x4B36E21D"}));
 	register_command(&ONKYO_RC911R_BD_DVD, makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x4B3631CE"}));
 	register_command(&ONKYO_RC911R_CBL_SAT, makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x4BB6708F"}));
 	register_command(&ONKYO_RC911R_GAME, makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x4BB6B04F"}));

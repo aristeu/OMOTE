@@ -1,7 +1,9 @@
 #pragma once
 
 // Only activate the commands that are used. Every command takes 100 bytes, wether used or not.
-extern uint16_t ONKYO_RC911R_POWER_TOGGLE;
+//extern uint16_t ONKYO_RC911R_POWER_TOGGLE;
+extern uint16_t ONKYO_RC911R_POWER_ON;
+extern uint16_t ONKYO_RC911R_POWER_OFF;
 extern uint16_t ONKYO_RC911R_BD_DVD;
 extern uint16_t ONKYO_RC911R_CBL_SAT;
 extern uint16_t ONKYO_RC911R_GAME;
