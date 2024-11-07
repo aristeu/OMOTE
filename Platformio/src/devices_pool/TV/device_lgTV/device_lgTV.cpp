@@ -52,6 +52,7 @@ uint16_t LGTV_KEY_D;
 uint16_t LGTV_INPUT_HDMI_1;
 uint16_t LGTV_INPUT_HDMI_2;
 uint16_t LGTV_INPUT_HDMI_3;
+uint16_t LGTV_INPUT_HDMI_4;
 //uint16_t LGTV_INPUT_COMPONENT;
 uint16_t LGTV_INPUT_TV;
 //uint16_t LGTV_SLEEP;
@@ -111,6 +112,7 @@ void register_device_lgTV()
   register_command(&LGTV_INPUT_HDMI_1   , makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x20DF738C"}));
   register_command(&LGTV_INPUT_HDMI_2   , makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x20DF33CC"}));
   register_command(&LGTV_INPUT_HDMI_3   , makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x20DF9768"}));
+  register_command(&LGTV_INPUT_HDMI_4   , makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x20DF5BA4"}));
   //register_command(&LGTV_INPUT_COMPONENT, makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x20DFFD02"}));
   register_command(&LGTV_INPUT_TV       , makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x20DF6B94"}));
   //register_command(&LGTV_SLEEP          , makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x20DF58A7"}));

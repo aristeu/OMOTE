@@ -49,6 +49,7 @@ extern uint16_t LGTV_KEY_D;
 extern uint16_t LGTV_INPUT_HDMI_1;
 extern uint16_t LGTV_INPUT_HDMI_2;
 extern uint16_t LGTV_INPUT_HDMI_3;
+extern uint16_t LGTV_INPUT_HDMI_4;
 extern uint16_t LGTV_INPUT_TV;
 //extern uint16_t LGTV_INPUT_COMPONENT;
 //extern uint16_t LGTV_SLEEP;
