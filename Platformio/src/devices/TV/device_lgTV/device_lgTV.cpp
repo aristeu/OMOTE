@@ -4,7 +4,7 @@
 #include "device_lgTV.h"
 
 // Only activate the commands that are used. Every command takes 100 bytes, wether used or not.
-uint16_t LGTV_POWER_TOGGLE;
+//uint16_t LGTV_POWER_TOGGLE;
 uint16_t LGTV_SOURCE;
 uint16_t LGTV_NUM_1;
 uint16_t LGTV_NUM_2;
@@ -47,8 +47,8 @@ uint16_t LGTV_KEY_D;
 //uint16_t LGTV_RECORD;
 //uint16_t LGTV_PLAY;
 //uint16_t LGTV_STOP;
-//uint16_t LGTV_POWER_OFF;
-//uint16_t LGTV_POWER_ON;
+uint16_t LGTV_POWER_OFF;
+uint16_t LGTV_POWER_ON;
 uint16_t LGTV_INPUT_HDMI_1;
 uint16_t LGTV_INPUT_HDMI_2;
 uint16_t LGTV_INPUT_HDMI_3;
@@ -65,7 +65,7 @@ void register_device_lgTV()
   // https://tasmota.github.io/docs/Codes-for-IR-Remotes/#lg-55uh8509-tv
   // Tested on LG 42LA6208-ZA
 
-  register_command(&LGTV_POWER_TOGGLE   , makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x20DF10EF"}));
+//  register_command(&LGTV_POWER_TOGGLE   , makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x20DF10EF"}));
   register_command(&LGTV_SOURCE         , makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x20DFD02F"}));
   register_command(&LGTV_NUM_1          , makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x20DF8877"}));
   register_command(&LGTV_NUM_2          , makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x20DF48B7"}));
@@ -107,8 +107,8 @@ void register_device_lgTV()
   //register_command(&LGTV_RECORD         , makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x20DFBD42"}));
   //register_command(&LGTV_PLAY           , makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x20DF0DF2"}));
   //register_command(&LGTV_STOP           , makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x20DF8D72"}));
-  //register_command(&LGTV_POWER_OFF      , makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x20DFA35C"}));
-  //register_command(&LGTV_POWER_ON       , makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x20DF23DC"}));
+  register_command(&LGTV_POWER_OFF      , makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x20DFA35C"}));
+  register_command(&LGTV_POWER_ON       , makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x20DF23DC"}));
   register_command(&LGTV_INPUT_HDMI_1   , makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x20DF738C"}));
   register_command(&LGTV_INPUT_HDMI_2   , makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x20DF33CC"}));
   register_command(&LGTV_INPUT_HDMI_3   , makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x20DF9768"}));
