@@ -3,7 +3,8 @@
 #include "applicationInternal/keys.h"
 #include "applicationInternal/scenes/sceneRegistry.h"
 #include "applicationInternal/hardware/hardwarePresenter.h"
-// devices
+#include "devices/misc/hdmi_switch7/device_hdmi_switch7.h"
+#include "devices/misc/hdmi_switch5/device_hdmi_switch5.h"
 #include "devices/TV/device_lgTV/device_lgTV.h"
 #include "devices/AVreceiver/device_onkyo_rc911r/device_onkyo_rc911r.h"
 #include "applicationInternal/commandHandler.h"

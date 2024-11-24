@@ -17,6 +17,8 @@
 //   AV receiver
 //#include "devices/AVreceiver/device_yamahaAmp/device_yamahaAmp.h"
 #include "devices/AVreceiver/device_onkyo_rc911r/device_onkyo_rc911r.h"
+#include "devices/misc/hdmi_switch5/device_hdmi_switch5.h"
+#include "devices/misc/hdmi_switch7/device_hdmi_switch7.h"
 //#include "devices/AVreceiver/device_denonAvr/device_denonAvr.h"
 //#include "devices/AVreceiver/device_lgsoundbar/device_lgsoundbar.h"
 //   media player
@@ -39,12 +41,30 @@
 //#include "devices/mediaPlayer/device_appleTV/gui_appleTV.h"
 //#include "devices/misc/device_smarthome/gui_smarthome.h"
 //#include "devices/misc/device_airconditioner/gui_airconditioner.h"
+#include "devices/misc/hdmi_switch5/device_hdmi_switch5.h"
+#include "devices/misc/hdmi_switch7/device_hdmi_switch7.h"
 #include "applicationInternal/keys.h"
 #include "applicationInternal/gui/guiStatusUpdate.h"
 // register scenes
-#include "scenes/scene__default.h"
 #include "scenes/scene_allOff.h"
+#include "scenes/scene__default.h"
+#include "scenes/scene_N64.h"
+#include "scenes/scene_NES_CLASSIC.h"
+#include "scenes/scene_PS3.h"
+#include "scenes/scene_PS4.h"
+#include "scenes/scene_PS5.h"
+#include "scenes/scene_RETRON5.h"
+#include "scenes/scene_ROKU.h"
+#include "scenes/scene_SNES_CLASSIC.h"
+#include "scenes/scene_STEAM.h"
+#include "scenes/scene_SWITCH.h"
 #include "scenes/scene_TV.h"
+#include "scenes/scene_WII.h"
+#include "scenes/scene_WII_U.h"
+#include "scenes/scene_XBOX360.h"
+#include "scenes/scene_XBOXONE.h"
+#include "scenes/scene_XBOX_X.h"
+
 //#include "scenes/scene_fireTV.h"
 //#include "scenes/scene_chromecast.h"
 //#include "scenes/scene_appleTV.h"
@@ -110,6 +130,8 @@ int main(int argc, char *argv[]) {
   //register_keyboardCommands();
   register_device_onkyo_rc911r();
 
+  register_device_hdmi_switch5();
+  register_device_hdmi_switch7();
   // Register the GUIs. They will be displayed in the order they have been registered.
   register_gui_sceneSelection();
   register_gui_irReceiver();
@@ -127,13 +149,30 @@ int main(int argc, char *argv[]) {
 
   // register the scenes and their key_commands_*
   register_scene_defaultKeys();
+  register_scene_PS5();
+  register_scene_XBOX_X();
+  register_scene_RETRON5();
+  register_scene_SWITCH();
+
+  register_scene_PS3();
+  register_scene_PS4();
+  register_scene_N64();
+  register_scene_NES_CLASSIC();
+  register_scene_SNES_CLASSIC();
+  register_scene_WII();
+  register_scene_WII_U();
+  register_scene_STEAM();
+  register_scene_ROKU();
+  register_scene_XBOX360();
+  register_scene_XBOXONE();
   register_scene_TV();
+
   //register_scene_fireTV();
   //register_scene_chromecast();
- // register_scene_appleTV();
+  //register_scene_appleTV();
   register_scene_allOff();
   // Only show these scenes on the sceneSelection gui. If you don't set this explicitely, by default all registered scenes are shown.
-  set_scenes_on_sceneSelectionGUI({scene_name_TV});
+  //set_scenes_on_sceneSelectionGUI({scene_name_TV});
 
   // init GUI - will initialize tft, touch and lvgl
   init_gui();

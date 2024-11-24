@@ -6,3 +6,5 @@ extern uint16_t HDMI_SWITCH5_HDMI2;
 extern uint16_t HDMI_SWITCH5_HDMI3;
 extern uint16_t HDMI_SWITCH5_HDMI4;
 extern uint16_t HDMI_SWITCH5_HDMI5;
+
+void register_device_hdmi_switch5(void);
